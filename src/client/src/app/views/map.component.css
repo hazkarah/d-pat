@@ -36,7 +36,23 @@ hr {
 
 .dpat-ol-div {
 	padding: 0px;
+	position: fixed;
+    bottom: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
 }
+
+.dpat-ol-map .ol-viewport canvas {
+    position: fixed !important;
+    bottom: 0px;
+    height: 100%;
+    width: 100%;
+    min-width: 80px;
+    min-height: 800px;
+}
+
+    
 
 .dpat-ol-map {
 	height: calc(100vh - 55px);
@@ -47,6 +63,30 @@ hr {
 .ol-zoom-out {
 	background-color: rgba(0, 0, 0, 0.5) !important;
 }
+
+.ol-overlay-container #map-info .card {
+    background: #fff !important;
+   
+}
+#map-info .card table {
+    margin: 10px;
+}
+#map-info table tr th,
+#map-info table tr td {
+    padding-left: 10px !important;
+}
+ 
+
+#map-info .card-body {
+    color: #000 !important;
+    padding: 0px !important;
+} 
+#map-info .card-body p.card-text {
+   background: #d5ae10 !important; 
+    color: #fff !important;
+   heigth: 64px;
+}
+ 
 
 .card-header {
 	padding: 10px;
@@ -63,6 +103,32 @@ hr {
 	font-size: 13px;
 }
 
+.control-layers {
+	z-index: 99999999;
+	margin-top: 150px;
+	top: 30vh;
+	background-color: #FFF;
+}
+.container-logos-lapig {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    background-color: #fffc;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-flex: 1;
+    flex: 1 1 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    flex-flow: row-reverse;
+    -webkit-box-align: end;
+    align-items: flex-end;
+    z-index: 99999;
+    padding: 17px;
+}
+
 #positionheaders {
 	padding: 10px;
 }
@@ -73,9 +139,9 @@ hr {
 	/*bottom: 2%;*/
 	/*height: 90%;*/
 	min-width: 320px;
-	top: 4%;
+	top: 8%;
 	width: 22%;
-	background-color: #FFF;
+
 	color: #754c26;
 	text-align: left;
 	z-index: 1000;
@@ -92,7 +158,6 @@ hr {
 	color: #666;
 	text-align: left;
 	z-index: 1000;
-	border: 1px solid #808080;
 	opacity: .93;
 }
 
@@ -105,7 +170,6 @@ hr {
 	color: #666;
 	text-align: left;
 	z-index: 1000;
-	border: 1px solid #808080;
 	opacity: .93;
 }
 
@@ -134,7 +198,6 @@ hr {
 
 .navbar-title {
 	border-bottom: 5px solid #66bb6a;
-	background-color: #FFF;
 	padding: 13px 0;
 }
 
@@ -204,6 +267,12 @@ hr {
 	background-color: green;
 	} */
 
+
+.mat-tab-label-active {
+    background: #f9f5e3;
+    font-weight: bold;
+ }
+    
 /* ink bar */
 ::ng-deep .mat-tab-group.mat-primary .mat-ink-bar {
 	background-color: var(--primary-color, rgb(20, 148, 27)) !important;
@@ -246,26 +315,17 @@ h6 {
 }
 
 .titleWindows {
-	color: #424242;
-	background-color: #69ce69;
+	color: #f9f9f9;
+	background-color: #d4aa00;
+    padding: 10px;
 	padding: 10px;
 	font-weight: bold;
 	border-bottom: 1px solid #424242;
 	font-size: 22px;
+	cursor: move;
 }
 
-.title-atlas {
-	font-weight: bold;
-	font-size: 30px;
-	font-family: Gill Sans, Verdana;
-	color: rgb(19, 134, 67);
-	margin: 0;
-	padding: 0px 0px 6px 0px;
-	line-height: 44px;
-	letter-spacing: 3px;
-	text-transform: uppercase;
 
-}
 
 .title-atlas-div {
 	text-align: left;
@@ -348,12 +408,13 @@ button {
 
 .collapse-btn {
 	padding: 0px;
-	padding-left: 5px;
-	padding-right: 5px;
-	background-color: #424242;
-	border-color: #424242;
-	margin-left: 15px;
-	color: white !important;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: #b79301;
+    
+    border: none;
+    margin-left: 15px;
+    color: white !important;
 }
 
 .separacaoLayers {
@@ -409,7 +470,6 @@ button {
 	.barra-titulo {
 		padding-top: 10px;
 		padding-bottom: 0px;
-		background-color: #cccccc;
 	}
 
 	.buttons-download,
@@ -574,6 +634,10 @@ button {
 .expansion-layer {
 	padding-left: 4.5%;
 }
+h5.expansion-layer  {
+	padding-left: 4.5%;
+	font-size: 0.8rem;
+}
 
 .layersContent {
 	padding: 1.5% 4%;
@@ -607,25 +671,31 @@ button {
 } */
 
 /* .mat-expansion-panel-header:focus,  */
-
+.mat-expansion-panel-header.mat-expanded {
+	background: #fffbea !important;
+}
 .mat-expansion-panel-header.mat-expanded:hover {
-	background: #4e4e4e;
-	color: #eeeeee;
-	border: solid #eeeeee 3px;
+	background: #d8c369 !important;
+	color: #635c40;
+	border:none;
+	border-radius: 0px;
 }
 
 .mat-expansion-panel-header {
-	background: #4e4e4e;
-	color: #eeeeee;
-	border: solid #eeeeee 3px;
+	background: #eaeaea;
+	color: #635c40;
+	border: none;
 	justify-content: space-between;
+	border-left: 5px solid #d5ae10;
+    border-radius: 0px !important;
+    margin-bottom: 1px;
 }
 
 .mat-expansion-panel-header.mat-expanded:focus,
 .mat-expansion-panel-header:hover {
-	background: #eeeeee;
-	color: #4e4e4e;
-	border: solid #eeeeee 3px;
+	background: #848484;
+	color: #635c40;
+	border: none;
 }
 
 mat-select {

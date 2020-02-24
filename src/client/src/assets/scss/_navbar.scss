@@ -1,8 +1,83 @@
+.navbar{
+     
+	background: rgb(255,255,255);
+	background: linear-gradient(90deg, rgba(255,255,255,0.27494747899159666) 19%, rgba(255,255,255,0.11528361344537819) 100%);
 
+    padding: 10px;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+
+  padding: 10px 0;
+   li.active a.nav-link {
+      color: #preset;
+  }
+}
+	
+.navbar-title {
+	// border-bottom: 5px solid #d4aa00 !important;
+	border: none !important;
+}
+.navbar .title-atlas {
+    color: #019901;
+    font-weight: bold;
+}
+
+.dpat-logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.dpat-logo {
+    background-image: url('assets/logo/dpat-logo-white-overlay.png');
+	width: 220px;
+    height: 220px;
+    display: block;
+    background-size: contain;
+    float: left;
+    background-repeat: no-repeat;
+    margin-top: -20px;
+    margin-left: -20px;
+}
+.dpat-logo-cerrado {
+	 
+	background-image: url('assets/logo/cerrado-dpat-logo.png');
+	width: 100px;
+    height: 80px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 15px;
+    
+ }
 .navbar-brand{
   position: relative;
   padding: 0px;
+} 
+
+
+.languages-container {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    display: -webkit-box;
+    display: flex;
+     
+    width: auto;
+    padding-top: 10px;
+    
+    align-items: center;
+ 
+    div {
+   		flex: 1 1 100%;
+	    cursor: pointer;
+	    margin-right: 10px;
+	    width: 36px;
+	    background-size: contain;
+	    height: 24px;
+    }
 }
+
+
 .top-nav-collapse{
   background: #fff;
   z-index: 999999;
@@ -116,12 +191,7 @@
   -webkit-transition: width 1s;
   -ms-transition: width 1s;
 }
-.navbar{
-  padding: 10px 0;
-   li.active a.nav-link {
-      color: #preset;
-  }
-}
+
 .dropdown-toggle::after{
   display: none;
 }

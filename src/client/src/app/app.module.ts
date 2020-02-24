@@ -8,6 +8,8 @@ import {MatDialogModule} from "@angular/material";
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MapComponent } from './views/map.component';
+import { MapLayoutComponent } from './views/map.layout.component';
+
 import { DialogOverviewExampleDialog } from './views/map.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,7 +22,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
-
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { HttpClientModule } from '@angular/common/http';
 
 import { LOCALE_ID } from '@angular/core';
@@ -39,6 +41,8 @@ import {CardModule} from 'primeng/card';
 import {AccordionModule} from 'primeng/accordion';
 import { DatePipe } from '@angular/common';
 import { SpinnerImgComponent } from './views/spinner-img/spinner-img.component';
+import { MapMenuLateralComponent } from "src/app/views/map-menu-lateral.component";
+import { SearchService } from "src/app/services/search.service";
 
 
 registerLocaleData(localePt);
@@ -47,9 +51,12 @@ registerLocaleData(localePt);
   declarations: [
     AppComponent,
     MapComponent,
+    MapMenuLateralComponent,
+    MapLayoutComponent,
     DialogOverviewExampleDialog,
     SpinnerImgComponent
   ],
+  exports: [MapComponent,MapMenuLateralComponent,MapLayoutComponent,DialogOverviewExampleDialog],
   imports: [
     TabViewModule,
     NgxGalleryModule,
@@ -72,16 +79,18 @@ registerLocaleData(localePt);
     MatButtonModule,
     MatIconModule,
     MatRadioModule,
+    DragDropModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
     NgbModule.forRoot()
   ],
-  entryComponents:[MapComponent, DialogOverviewExampleDialog],
+  entryComponents:[MapComponent,MapMenuLateralComponent, MapLayoutComponent,  DialogOverviewExampleDialog],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-BR' },
-    DatePipe
+    DatePipe,
+    SearchService
   ],
   bootstrap: [AppComponent],
 })

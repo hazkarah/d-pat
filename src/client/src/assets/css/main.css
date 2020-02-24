@@ -1,13 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 @import url("https://fonts.googleapis.com/css?family=Arvo:700|Open+Sans");
 html {
   overflow-x: hidden;
 }
 
 body {
-  background: #fff;
+  background: #e0dfdf;
   font-size: 14px;
   font-weight: 400;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto','Open Sans', sans-serif;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -641,9 +643,6 @@ hr {
   -ms-transition: width 1s;
 }
 
-.navbar {
-  padding: 10px 0;
-}
 
 .navbar li.active a.nav-link {
   color: #preset;

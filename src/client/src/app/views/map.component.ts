@@ -58,34 +58,12 @@ import {
   NgxGalleryAnimation
 } from "ngx-image-video-gallery";
 import { element } from 'protractor';
+import { SearchService } from "src/app/services/search.service";
 
-
-const SEARCH_URL = "service/map/search";
-const PARAMS = new HttpParams({
-  fromObject: {
-    format: "json"
-  }
-});
-
-@Injectable()
-export class SearchService {
-  constructor(private http: HttpClient) { }
-
-  search(term: string) {
-    if (term === "") {
-      return of([]);
-    }
-
-    return this.http
-      .get(SEARCH_URL, { params: PARAMS.set("key", term) })
-      .pipe(map(response => response));
-  }
-}
-
+ 
 @Component({
   selector: "app-map",
   templateUrl: "./map.component.html",
-  providers: [SearchService],
   styleUrls: ["./map.component.css"]
 })
 export class MapComponent implements OnInit {
@@ -1250,7 +1228,7 @@ export class MapComponent implements OnInit {
 }
 
 @Component({
-  selector: "app-map",
+  selector: "app-map-dialog-overview",
   templateUrl: "./dialog-laudo.html",
   styleUrls: ["./map.component.css"]
 })
